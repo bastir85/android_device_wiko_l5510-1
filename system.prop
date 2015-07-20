@@ -1,5 +1,5 @@
 #
-# system.prop for l5510
+# system.prop for l5320 and l5510
 #
 ro.secure=0
 ro.debuggable=1
