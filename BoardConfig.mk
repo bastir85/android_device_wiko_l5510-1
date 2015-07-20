@@ -17,7 +17,7 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
 BOARD_KERNEL_CMDLINE 	     += androidboot.selinux=permissive
-TARGET_KERNEL_CONFIG 	     := msm8916_defconfig
+TARGET_KERNEL_CONFIG 	     := msm8916_l5510_defconfig
 BOARD_KERNEL_TAGS_OFFSET     := 0x00000100
 BOARD_RAMDISK_OFFSET	     := 0x01000000
 
@@ -60,4 +60,5 @@ RECOVERY_SDCARD_ON_DATA 	:= true
 TW_INTERNAL_STORAGE_PATH 	:= "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-COMMON_GLOBAL_CFLAGS		+= -DNO_SECURE_DISCARD
+# This fixes the slow wiping of partitions
+COMMON_GLOBAL_CFLAGS		+= -DNO_SECURE_DISCARD 
